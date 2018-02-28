@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "159002148345",
+    "firebase_url": "https://momsays-eef04.firebaseio.com",
+    "project_id": "momsays-eef04",
+    "storage_bucket": "momsays-eef04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159002148345:android:dacf19bcd55221ae",
+        "android_client_info": {
+          "package_name": "com.example.admin.attemp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159002148345-vphnnc8ut6vapl4b94tata6gl9angajm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.attemp2",
+            "certificate_hash": "9aef294bf618839c7c51097972e55c98af1bbc3b"
+          }
+        },
+        {
+          "client_id": "159002148345-v0484ou4mbtnqcms9oleua2f9qqcueup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8gPP6quWQwXQys1UTPMGIfqj8iEF9J4w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159002148345-v0484ou4mbtnqcms9oleua2f9qqcueup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
