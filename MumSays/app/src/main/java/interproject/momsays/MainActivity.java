@@ -21,37 +21,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Firebase.setAndroidContext(this);
 
-        mSendData = (Button) findViewById(R.id.sendData);
+
         Button addBtn = (Button) findViewById(R.id.addBtn);
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                EditText nameText = (EditText) findViewById(R.id.nameText);
-                EditText numText = (EditText) findViewById(R.id.numText);
+                EditText refText = (EditText) findViewById(R.id.refText);
+                EditText valText = (EditText) findViewById(R.id.valText);
 
                 TextView displayTextView = (TextView) findViewById(R.id.displayTextView);
 
-                String nameVar = nameText.getText().toString();
-                int numVar = Integer.parseInt(numText.getText().toString());
+                String refVar = refText.getText().toString();
+                String valVar = valText.getText().toString();
 
-                displayTextView.setText(nameVar + " " + numVar);
-            }
-        });
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference(refVar);
 
-
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
-
-
-        mSendData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+                myRef.setValue(valVar);
 
             }
         });
-
 
     }
 }
