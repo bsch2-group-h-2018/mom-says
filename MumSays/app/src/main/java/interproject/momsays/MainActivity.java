@@ -13,6 +13,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
     private Button mSendData;
     //private Firebase mRef;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //Firebase.setAndroidContext(this);
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
 
         Button addBtn = (Button) findViewById(R.id.addBtn);
@@ -33,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
                 String refVar = refText.getText().toString();
                 String valVar = valText.getText().toString();
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference(refVar);
-
-                myRef.setValue(valVar);
-
             }
         });
 
