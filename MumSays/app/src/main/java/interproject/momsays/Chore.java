@@ -37,7 +37,9 @@ public class Chore {
     public void writeNewTask (String choreId, String assignedTo, String choreName, String choreDetail){
         Chore chore = new Chore(assignedTo, choreName, choreDetail);
 
-        mDatabase.child("chores").child(choreId).setValue(choreName);
+        mDatabase.child("Chores").child(choreId).child("Assigned_To").setValue(assignedTo) ;
+        mDatabase.child("Chores").child(choreId).child("Chore_Name").setValue(choreName) ;
+        mDatabase.child("Chores").child(choreId).child("Chore_Detail").setValue(choreDetail) ;
     }
 }
 
