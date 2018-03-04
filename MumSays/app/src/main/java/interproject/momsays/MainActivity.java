@@ -14,27 +14,34 @@ public class MainActivity extends AppCompatActivity {
     private Button mSendData;
     //private Firebase mRef;
     private DatabaseReference mDatabase;
+    private Chore myChore;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Firebase.setAndroidContext(this);
+
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        myChore = new Chore();
 
 
         Button addBtn = (Button) findViewById(R.id.addBtn);
         addBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                EditText refText = (EditText) findViewById(R.id.refText);
-                EditText valText = (EditText) findViewById(R.id.valText);
+                EditText choreIdTF = (EditText) findViewById(R.id.choreIdTF);
+                EditText assignedToTF = (EditText) findViewById(R.id.assignedToTF);
+                EditText choreNameTF = (EditText) findViewById(R.id.choreNameTF);
+                EditText choreDetailTF = (EditText) findViewById(R.id.choreDetailTF);
 
-                TextView displayTextView = (TextView) findViewById(R.id.displayTextView);
+               String newChoreId = choreIdTF.getText().toString();
+                String newAssignedTo = assignedToTF.getText().toString();
+                String newChoreName = choreNameTF.getText().toString();
+                String newChoreDetail = choreDetailTF.getText().toString();
 
-                String refVar = refText.getText().toString();
-                String valVar = valText.getText().toString();
+               myChore.writeNewTask(newChoreId, newAssignedTo, newChoreName,newChoreDetail);
+
             }
         });
 
