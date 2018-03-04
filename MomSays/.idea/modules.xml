@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/MomSays.iml" filepath="$PROJECT_DIR$/MomSays.iml" />
+      <module fileurl="file://C:\Penuel Files\Github\AndroidStudio\MomSays\MomSays\MumSays.iml" filepath="C:\Penuel Files\Github\AndroidStudio\MomSays\MomSays\MumSays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Penuel Files\Github\AndroidStudio\MomSays\MomSays\app\app.iml" filepath="C:\Penuel Files\Github\AndroidStudio\MomSays\MomSays\app\app.iml" />
+    </modules>
+  </component>
+</project>
