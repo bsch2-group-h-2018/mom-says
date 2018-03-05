@@ -1,0 +1,7 @@
+This Version
+
+- App can now push data to database
+
+---TO_DO---
+GUI
+ ^Make GUI Responsive
