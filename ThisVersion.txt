@@ -2,8 +2,6 @@ This Version
 
 - App can now push data to database
 
-=====
-Recent Changed:
 ^Make GUI Responsive
 	^ Layout
 		^GUI is more Responsive
@@ -11,8 +9,15 @@ Recent Changed:
 			Linear Layout - vertical & horizental
 
 ^Improved Version
-=======
+
+=============================
+Recent Changed:
+
+
+===================
 TO_DO
 
-GUI
+^Create Database Unique ID
+^File Management
+^File Authentication
  

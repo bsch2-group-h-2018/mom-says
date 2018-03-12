@@ -12,6 +12,7 @@ import java.util.*;
 public class Chore {
     private DatabaseReference mDatabase;
 
+    private String choreKey;
     private String choreId;
     private String assignedTo;
     private String choreName;
@@ -21,6 +22,7 @@ public class Chore {
     public Chore(){
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        choreKey =  mDatabase.push().getKey();
         choreId = "chore00";
         assignedTo ="childName";
         choreName = "ChoreName" ;
@@ -37,9 +39,11 @@ public class Chore {
     public void writeNewTask (String choreId, String assignedTo, String choreName, String choreDetail){
         Chore chore = new Chore(assignedTo, choreName, choreDetail);
 
-        mDatabase.child("Chores").child(choreId).child("Assigned_To").setValue(assignedTo) ;
-        mDatabase.child("Chores").child(choreId).child("Chore_Name").setValue(choreName) ;
-        mDatabase.child("Chores").child(choreId).child("Chore_Detail").setValue(choreDetail) ;
+        mDatabase.child("Chores").child(choreKey) ;
+
+        mDatabase.child("Chores").child(choreKey).child("Assigned_To").setValue(assignedTo) ;
+        mDatabase.child("Chores").child(choreKey).child("Chore_Name").setValue(choreName) ;
+        mDatabase.child("Chores").child(choreKey).child("Chore_Detail").setValue(choreDetail) ;
     }
 }
 
