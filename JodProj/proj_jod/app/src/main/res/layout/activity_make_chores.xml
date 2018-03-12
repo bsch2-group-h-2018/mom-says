@@ -7,18 +7,8 @@
     tools:context="com.example.college.momsays.makeChores">
 
     <EditText
-        android:id="@+id/choreIdTF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView13"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <EditText
         android:id="@+id/choreNameTF"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -29,7 +19,7 @@
 
     <EditText
         android:id="@+id/assignedToTF"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView15"
         android:layout_alignStart="@+id/textView15"
@@ -51,7 +41,7 @@
 
     <EditText
         android:id="@+id/choreDetailTF"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -78,19 +68,6 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/choreNameTF"
         android:text="Chore Detail"
-        android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="40dp"
-        android:text="Chore Id"
         android:textSize="24sp" />
 
     <TextView
