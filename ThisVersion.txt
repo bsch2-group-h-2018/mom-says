@@ -8,13 +8,18 @@ This Version >
 		^Its like GridView but used with combination of
 			Linear Layout - vertical & horizental
 
+
+
 =====
 Recent Changed:
+
+^Install Database Unique ID in the program
+^ GUI Update
 
 =======
 STARTING
 
-^Install Database Unique ID in the program
+
 
 =======
 TO_DO
