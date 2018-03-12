@@ -19,5 +19,6 @@ STARTING
 =======
 TO_DO
 
+^ When the button is pressed; a message comes up to notify that it input is being sent to the database
 ^ File Management
  
