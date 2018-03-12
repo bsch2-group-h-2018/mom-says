@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">589923016892-lli2gnpa97f1nhd7qtcnp1r86kbhglas.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://momsays-e5644.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">589923016892</string>
+    <string name="google_api_key" translatable="false">AIzaSyBbPqz28jncayof3Ty2L2r_c22jGlAT6qU</string>
+    <string name="google_app_id" translatable="false">1:589923016892:android:1ea59b6313c4d37a</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBbPqz28jncayof3Ty2L2r_c22jGlAT6qU</string>
+    <string name="google_storage_bucket" translatable="false">momsays-e5644.appspot.com</string>
+    <string name="project_id" translatable="false">momsays-e5644</string>
+</resources>
