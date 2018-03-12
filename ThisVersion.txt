@@ -1,4 +1,5 @@
-This Version
+This Version > Status : Starting...
+
 
 - App can now push data to database
 
