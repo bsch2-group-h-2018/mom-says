@@ -28,13 +28,6 @@ public class makeChores extends AppCompatActivity {
         createChoreBT.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                final EditText choreIdTF = (EditText) findViewById(R.id.choreIdTF);
-                choreIdTF.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                       choreIdTF.getText().clear();
-                    }
-                });
 
                 //editText.getText().clear();
 
@@ -43,12 +36,12 @@ public class makeChores extends AppCompatActivity {
                 EditText choreNameTF = (EditText) findViewById(R.id.choreNameTF);
                 EditText choreDetailTF = (EditText) findViewById(R.id.choreDetailTF);
 
-                String newChoreId = choreIdTF.getText().toString();
+
                 String newAssignedTo = assignedToTF.getText().toString();
                 String newChoreName = choreNameTF.getText().toString();
                 String newChoreDetail = choreDetailTF.getText().toString();
 
-                myChore.writeNewTask(newChoreId, newAssignedTo, newChoreName,newChoreDetail);
+                myChore.writeNewTask(newAssignedTo, newChoreName,newChoreDetail);
 
             }
         });

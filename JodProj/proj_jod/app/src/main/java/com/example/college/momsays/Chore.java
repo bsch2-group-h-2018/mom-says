@@ -13,7 +13,6 @@ public class Chore {
     private DatabaseReference mDatabase;
 
     private String choreKey;
-    private String choreId;
     private String assignedTo;
     private String choreName;
     private String choreDetail;
@@ -23,7 +22,6 @@ public class Chore {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         choreKey =  mDatabase.push().getKey();
-        choreId = "chore00";
         assignedTo ="childName";
         choreName = "ChoreName" ;
         choreDetail = "Detail of Chores";
@@ -36,7 +34,7 @@ public class Chore {
         this.choreDetail = choreDetail;
     }
 
-    public void writeNewTask (String choreId, String assignedTo, String choreName, String choreDetail){
+    public void writeNewTask (String assignedTo, String choreName, String choreDetail){
         Chore chore = new Chore(assignedTo, choreName, choreDetail);
 
         mDatabase.child("Chores").child(choreKey).child("Assigned_To").setValue(assignedTo) ;
