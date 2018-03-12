@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test App</string>
+    <string name="app_name">Mom Says</string>
     <string name="create_new_account"> <a href="https://www.youtube.com" /> Create New Account </string>
     <string-array name="chores">
         <item>---</item>
