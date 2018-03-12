@@ -14,5 +14,5 @@ Recent Changed:
 =======
 TO_DO
 
-GUI
- 
+- Database Unique Id(functionalities)
+- Improve File Management
