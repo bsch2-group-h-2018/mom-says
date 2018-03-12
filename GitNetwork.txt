@@ -1,4 +1,5 @@
 Master
-^Database
- ^^db_godoc
-^jod_merge
+	^Database
+ 		^db_godoc
+	^jod_merge
+	^proto_v1
