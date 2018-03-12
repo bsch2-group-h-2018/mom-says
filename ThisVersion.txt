@@ -1,18 +1,23 @@
-This Version
+This Version > 
 
-- App can now push data to database
+^App can now push data to database
 
-=====
-Recent Changed:
 ^Make GUI Responsive
 	^ Layout
 		^GUI is more Responsive
 		^Its like GridView but used with combination of
 			Linear Layout - vertical & horizental
 
-^Improved Version
+=====
+Recent Changed:
+
+=======
+STARTING
+
+^Install Database Unique ID in the program
+
 =======
 TO_DO
 
-GUI
+^ File Management
  
