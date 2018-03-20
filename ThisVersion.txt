@@ -2,12 +2,13 @@ This Version >
 
 ^App can now push data to database
 
-^Make GUI Responsive
+^GUI Responsive
 	^ Layout
 		^GUI is more Responsive
 		^Its like GridView but used with combination of
 			Linear Layout - vertical & horizental
 ^Database Unique ID in the program
+^ Shared Firebase Account
 
 =====
 Recent Changed:
@@ -16,13 +17,10 @@ Recent Changed:
 =======
 STARTING
 
-
+^ Fetch Data from Database an display the chores on the UI.
 
 =======
 TO_DO
-
-^ Shared Firebas Account
-^ Create new MomSays Repo
 
 
 ^ When the button is pressed; a message comes up to notify that it input is being sent to the database
