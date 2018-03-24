@@ -8,6 +8,10 @@ Master
 	
 	^proto_v1
 
+	^display_data
+		^ ddata_1
+		^ ddata_2
+
 
 display_data
 - Working on fetching the data from the databases to the app.
