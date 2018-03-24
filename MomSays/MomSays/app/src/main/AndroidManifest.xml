@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".homePage" />
         <activity android:name=".giveChore" />
+        <activity android:name=".ListChores" />
         <activity android:name=".makeChores"></activity>
     </application>
 
