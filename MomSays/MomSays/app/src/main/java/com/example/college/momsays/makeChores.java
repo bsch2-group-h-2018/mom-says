@@ -9,10 +9,13 @@ import android.widget.EditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class makeChores extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
-    private Chores myChore;
+    private Chores myChores;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +23,11 @@ public class makeChores extends AppCompatActivity {
         setContentView(R.layout.activity_make_chores);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        myChore = new Chores();
+
+
+
+        Map<String, Object> choreValues = myChores.toMap();
+        Map<String, Object> childUpdates = new HashMap<>();
 
         Button createChoreBT = (Button) findViewById(R.id.createChoreBT);
         createChoreBT.setOnClickListener(new View.OnClickListener(){
@@ -39,7 +46,9 @@ public class makeChores extends AppCompatActivity {
                 String newChoreName = choreNameTF.getText().toString();
                 String newChoreDetail = choreDetailTF.getText().toString();
 
-                myChore.writeNewTask(newAssignedTo, newChoreName,newChoreDetail);
+
+
+
 
             }
         });

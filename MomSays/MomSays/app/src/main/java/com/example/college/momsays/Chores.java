@@ -18,6 +18,17 @@ public class Chores {
     public String choreDetail;
 
 
+    public Chores(){
+        assignedTo = "";
+        choreName = "";
+        choreDetail = "";
+    }
+
+    public Chores(String assignedTo, String choreName, String choreDetail){
+        this.assignedTo = assignedTo;
+        this.choreName = choreName;
+        this.choreDetail = choreDetail;
+    }
 
     public Map<String, Object> toMap(){
         HashMap<String, Object> result = new HashMap<>();
