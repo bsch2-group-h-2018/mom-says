@@ -33,7 +33,7 @@ public class ListChores extends AppCompatActivity {
 
             displayData = (TextView) findViewById(R.id.display_list_TV);
 
-            myRef.child("Chores").addValueEventListener(new ValueEventListener() {
+            myRef.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // This method is called once with the initial value and again
