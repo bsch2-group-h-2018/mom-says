@@ -43,7 +43,7 @@ public class homePage extends AppCompatActivity {
         displayChoresBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( homePage.this, ListChores.class);
+                Intent intent = new Intent( homePage.this, ChoresActivity.class);
                 startActivity(intent);
             }
         } );

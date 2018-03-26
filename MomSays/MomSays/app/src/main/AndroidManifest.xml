@@ -20,6 +20,7 @@
         <activity android:name=".giveChore" />
         <activity android:name=".ListChores" />
         <activity android:name=".makeChores"></activity>
+        <activity android:name=".ChoresActivity"></activity>
     </application>
 
 </manifest>
