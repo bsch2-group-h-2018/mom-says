@@ -3,10 +3,8 @@ package com.example.college.momsays;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -14,7 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class makeChores extends AppCompatActivity {
 
     private DatabaseReference mDatabase;
-    private Chore myChore;
+    private Chores myChore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +20,7 @@ public class makeChores extends AppCompatActivity {
         setContentView(R.layout.activity_make_chores);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        myChore = new Chore();
+        myChore = new Chores();
 
         Button createChoreBT = (Button) findViewById(R.id.createChoreBT);
         createChoreBT.setOnClickListener(new View.OnClickListener(){
