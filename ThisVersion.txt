@@ -17,7 +17,7 @@ Recent Changed:
 =======
 STARTING
 
-^ Fetch Data from Database an display the chores on the UI.
+^ Fetch Data from Database an display the chores on the UI.`
 
 =======
 TO_DO
