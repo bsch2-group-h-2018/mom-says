@@ -29,21 +29,14 @@ public class homePage extends AppCompatActivity {
 
         Button btnToMC = (Button) findViewById(R.id.makeChoresbtn);
 
-        btnToMC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(homePage.this, makeChores.class);
-                startActivity(intent);
-            }
-        } );
 
         Button displayChoresBTN = (Button) findViewById(R.id.displayChoresBTN);
 
         displayChoresBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( homePage.this, ChoresActivity.class);
+                Intent intent = new Intent( homePage.this, MessageActivity.class);
                 startActivity(intent);
             }
         } );

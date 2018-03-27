@@ -1,9 +1,5 @@
 package com.example.college.momsays;
 
-/**
- * Created by Admin on 26/03/2018.
- */
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -21,13 +17,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+/**
+ * Created by Admin on 27/03/2018.
+ */
 
-public class ChoresActivity extends AppCompatActivity{
-    private static final String TAG = "ChoreActivity";
+public class MessageActivity extends AppCompatActivity {
+
+    private static final String TAG = "MessageActivity";
     private static final String REQUIRED = "Required";
 
     private Button btnBack;
@@ -37,16 +35,17 @@ public class ChoresActivity extends AppCompatActivity{
     private TextView tvTime;
     private TextView tvBody;
 
-    private DatabaseReference mDatabase;
-    private DatabaseReference mChoresReference;
-    private ChildEventListener mChoresListener;
 
-    private ArrayList<Chores> choreList;
+    private DatabaseReference mDatabase;
+    private DatabaseReference mMessageReference;
+    private ChildEventListener mMessageListener;
+
+    private ArrayList<Message> messageList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chores);
+        setContentView(R.layout.activity_message);
 
         btnSend = (Button) findViewById(R.id.btn_send);
         btnBack = (Button) findViewById(R.id.btn_back);
@@ -56,15 +55,14 @@ public class ChoresActivity extends AppCompatActivity{
         tvBody = (TextView) findViewById(R.id.tv_body);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        mChoresReference = FirebaseDatabase.getInstance().getReference("chores");
+        mMessageReference = FirebaseDatabase.getInstance().getReference("messages");
 
-
-        choreList = new ArrayList<>();
+        messageList = new ArrayList<>();
 
         btnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                submitChores();
+                submitMessage();
                 edtSentText.setText("");
             }
         });
@@ -90,16 +88,16 @@ public class ChoresActivity extends AppCompatActivity{
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
                 // A new message has been added
                 // onChildAdded() will be called for each node at the first time
-                Chores chores = dataSnapshot.getValue(Chores.class);
-                choreList.add(chores);
+                Message message = dataSnapshot.getValue(Message.class);
+                messageList.add(message);
 
-                Log.e(TAG, "onChildAdded:" + chores.choreName);
+                Log.e(TAG, "onChildAdded:" + message.body);
 
-                Chores latest = choreList.get(choreList.size() - 1);
+                Message latest = messageList.get(messageList.size() - 1);
 
-                tvAuthor.setText(latest.assignedTo);
-                tvTime.setText(latest.choreDetail);
-                tvBody.setText(latest.choreName);
+                tvAuthor.setText(latest.author);
+                tvTime.setText(latest.time);
+                tvBody.setText(latest.body);
             }
 
             @Override
@@ -107,8 +105,8 @@ public class ChoresActivity extends AppCompatActivity{
                 Log.e(TAG, "onChildChanged:" + dataSnapshot.getKey());
 
                 // A message has changed
-                Chores chores = dataSnapshot.getValue(Chores.class);
-                Toast.makeText(ChoresActivity.this, "onChildChanged: " + chores.choreName, Toast.LENGTH_SHORT).show();
+                Message message = dataSnapshot.getValue(Message.class);
+                Toast.makeText(MessageActivity.this, "onChildChanged: " + message.body, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -116,8 +114,8 @@ public class ChoresActivity extends AppCompatActivity{
                 Log.e(TAG, "onChildRemoved:" + dataSnapshot.getKey());
 
                 // A message has been removed
-                Chores chores = dataSnapshot.getValue(Chores.class);
-                Toast.makeText(ChoresActivity.this, "onChildRemoved: " + chores.choreName, Toast.LENGTH_SHORT).show();
+                Message message = dataSnapshot.getValue(Message.class);
+                Toast.makeText(MessageActivity.this, "onChildRemoved: " + message.body, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -125,37 +123,37 @@ public class ChoresActivity extends AppCompatActivity{
                 Log.e(TAG, "onChildMoved:" + dataSnapshot.getKey());
 
                 // A message has changed position
-                Chores chores = dataSnapshot.getValue(Chores.class);
-                Toast.makeText(ChoresActivity.this, "onChildMoved: " + chores.choreName, Toast.LENGTH_SHORT).show();
+                Message message = dataSnapshot.getValue(Message.class);
+                Toast.makeText(MessageActivity.this, "onChildMoved: " + message.body, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.e(TAG, "postMessages:onCancelled", databaseError.toException());
-                Toast.makeText(ChoresActivity.this, "Failed to load Chores.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MessageActivity.this, "Failed to load Message.", Toast.LENGTH_SHORT).show();
             }
         };
 
-        mChoresReference.addChildEventListener(childEventListener);
+        mMessageReference.addChildEventListener(childEventListener);
 
         // copy for removing at onStop()
-        mChoresListener = childEventListener;
+        mMessageListener = childEventListener;
     }
 
     @Override
     protected void onStop() {
         super.onStop();
 
-        if (mChoresListener != null) {
-            mChoresReference.removeEventListener(mChoresListener);
+        if (mMessageListener != null) {
+            mMessageReference.removeEventListener(mMessageListener);
         }
 
-        for (Chores chores: choreList) {
-            Log.e(TAG, "listItem: " + chores.choreName);
+        for (Message message: messageList) {
+            Log.e(TAG, "listItem: " + message.body);
         }
     }
 
-    private void submitChores() {
+    private void submitMessage() {
         final String body = edtSentText.getText().toString();
 
         if (TextUtils.isEmpty(body)) {
@@ -163,22 +161,23 @@ public class ChoresActivity extends AppCompatActivity{
             return;
         }
 
+        // User data change listener
 
     }
 
-    private void writeNewChores(String assignedTo, String choreName, String choreDetail) {
-        Chores chores = new Chores(assignedTo, choreName, choreDetail);
+    private void writeNewMessage(String body) {
+        String time = "30-March-2010";
+        Message message = new Message("username", body, time);
 
-        Map<String, Object> choreValues = chores.toMap();
+        Map<String, Object> messageValues = message.toMap();
         Map<String, Object> childUpdates = new HashMap<>();
 
         String key = mDatabase.child("messages").push().getKey();
 
-        childUpdates.put("/messages/" + key, choreValues);
+        childUpdates.put("/messages/" + key, messageValues);
+        childUpdates.put("/user-messages/" + "Username" + "/" + key, messageValues);
 
         mDatabase.updateChildren(childUpdates);
     }
 
-
 }
-

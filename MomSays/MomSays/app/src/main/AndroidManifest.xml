@@ -18,9 +18,7 @@
         </activity>
         <activity android:name=".homePage" />
         <activity android:name=".giveChore" />
-        <activity android:name=".ListChores" />
-        <activity android:name=".makeChores"></activity>
-        <activity android:name=".ChoresActivity"></activity>
+        <activity android:name="MessageActivity" />
     </application>
 
 </manifest>
