@@ -5,7 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -48,17 +50,20 @@ public class ListChores extends AppCompatActivity {
                         choreList.add(chore);
                     }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        System.out.println("DATABASE ERROR");
-                        FirebaseErrorHandler.handleDatabaseError(databaseError.getCode(), ReadingActivity.this)
-                    }
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    // Getting Post failed, log a message
+                    Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
+
                 }
 
             });
 
             // Make an ArrayAdapter to show our results.
-            ArrayAdapter<Chore> plantAdapter = new ArrayAdapter<Chore>(getActivity(), android.R.layout.simple_list_item_1, choreList);
+            ArrayAdapter<Chore> choreArrayAdapter = new ArrayAdapter<Chore>(getActivity(), android.R.layout.simple_list_item_1, choreList);
 
             // set this specimen list in the fragment
             setListAdapter(plantAdapter);
