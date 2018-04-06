@@ -3,13 +3,15 @@ package com.example.college.momsays;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import android.app.ListFragment;
+import android.os.Bundle;
+import android.widget.ArrayAdapter;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -22,18 +24,19 @@ import java.util.List;
 
 public class ListChores extends AppCompatActivity {
 
-     private DatabaseReference mDatabase;
+        private DatabaseReference mDatabase;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_list_chores);
-            final List<Chore> choresList = new ArrayList<Chore>();
+            final List<Chore> choreList = new ArrayList<Chore>();
 
-            mDatabase = FirebaseDatabase.getInstance().getReference();
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference databaseReference = database.getReference();
 
             //To be resumed
-            mDatabase.child("Chores").addValueEventListener(new ValueEventListener() {
+            databaseReference.child("Chores").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // get all of the children at this level.
@@ -41,15 +44,24 @@ public class ListChores extends AppCompatActivity {
 
                     // shake hands with each of them.'
                     for (DataSnapshot child : children) {
-                        SpecimenDTO specimenDTO = child.getValue(SpecimenDTO.class);
-                        specimens.add(specimenDTO);
+                        Chore chore = child.getValue(Chore.class);
+                        choreList.add(chore);
                     }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        System.out.println("DATABASE ERROR");
+                        FirebaseErrorHandler.handleDatabaseError(databaseError.getCode(), ReadingActivity.this)
+                    }
+                }
 
             });
 
+            // Make an ArrayAdapter to show our results.
+            ArrayAdapter<Chore> plantAdapter = new ArrayAdapter<Chore>(getActivity(), android.R.layout.simple_list_item_1, choreList);
 
-
-
+            // set this specimen list in the fragment
+            setListAdapter(plantAdapter);
 
         }
 
