@@ -38,14 +38,7 @@ public class homePage extends AppCompatActivity {
             }
         } );
 
-        Button displayChoresBTN = (Button) findViewById(R.id.displayChoresBTN);
 
-        displayChoresBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent( homePage.this, ListChores.class);
-                startActivity(intent);
-            }
-        } );
+
     }
 }
