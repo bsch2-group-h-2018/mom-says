@@ -39,6 +39,17 @@ public class homePage extends AppCompatActivity {
         } );
 
 
+        //This is gonna be Test 1 Button.
+        Button btnToT2 = (Button) findViewById(R.id.test1_BTN);
+
+        btnToMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(homePage.this, Main_Act_2.class);
+                startActivity(intent);
+            }
+        } );
 
     }
 }
