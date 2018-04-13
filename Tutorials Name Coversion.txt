@@ -1,0 +1,35 @@
+Tutorials
+
+> ArrayList 
+	^ Link:
+		> https://www.youtube.com/watch?v=A-_hKWMA7mk&t=33s
+		> https://www.youtube.com/watch?v=nOdSARCVYic
+	
+	
+	^ BUCKY NAME CHANGE
+		- buckyListView => mListView
+		- buckysAdapter => choreAdapter
+		
+
+	CLASS
+		- MainActivity => Main_Act_2
+		
+		- CustomAdapter => CustomAdapter
+			^ VARIABLE NAME:
+				> foods => chores
+				> buckysInflater => chore_inflater
+				> singleFoodItem => single_chore_item
+				> buckyText => chore_text (not sure yet)
+
+	XML File
+		- activity_main => activity_bucky_list
+		- buckyListView => chore_list_view
+		- custom_row => chore_row
+			^ITEM NAME
+				> buckyImage => send_chore_image_view
+				
+	FILE NAME
+		- chunky (.png) => send (.png)
+				
+
+	

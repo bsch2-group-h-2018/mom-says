@@ -5,13 +5,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/chore_text"
         android:layout_width="330dp"
         android:layout_height="50dp"
         android:text="chore_row_text" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/send_chore_image_view"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:srcCompat="@android:drawable/ic_menu_send" />
