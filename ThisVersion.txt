@@ -1,4 +1,14 @@
-This Version > 
+This Version > Working
+
+=====================
+  Recent Changes
+------------------
+
+^ ArrayAdapter Added
+
+
+
+===================
 
 ^App can now push data to database
 

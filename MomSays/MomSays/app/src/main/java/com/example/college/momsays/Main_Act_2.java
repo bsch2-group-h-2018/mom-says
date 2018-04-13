@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by Admin on 13/04/2018.
@@ -29,7 +30,8 @@ public class Main_Act_2 extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String chore = String.valueOf()
+                        String chore = String.valueOf(parent.getItemAtPosition(position));
+                        Toast.makeText(Main_Act_2.this, chore, Toast.LENGTH_LONG).show();
                     }
                 }
 
