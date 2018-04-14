@@ -21,7 +21,7 @@ public class Main_Act_2 extends AppCompatActivity {
         setContentView(R.layout.activity_bucky_list);
 
         String[]chore_item = {"chore 1", "chore 2", "chore 3"};
-        ListAdapter choreAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, chore_item);
+        ListAdapter choreAdapter = new CustomAdapter(this, chore_item);
         ListView chore_list_view = (ListView) findViewById(R.id.chore_list_view);
         chore_list_view.setAdapter(choreAdapter);
 

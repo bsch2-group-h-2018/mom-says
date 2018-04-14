@@ -13,6 +13,8 @@ Tutorials
 
 	CLASS
 		- MainActivity => Main_Act_2
+			^VARIABLE NAME
+				^ foods (Array) = chore_item
 		
 		- CustomAdapter => CustomAdapter
 			^ VARIABLE NAME:
