@@ -19,7 +19,7 @@ public class Spacecraft {
         this.name = name;
     }
 
-    public String gqetPropellant() {
+    public String getPropellant() {
         return propellant;
     }
 
