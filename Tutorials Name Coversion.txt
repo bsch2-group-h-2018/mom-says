@@ -1,3 +1,21 @@
+http://camposha.info/source/android-firebase-listview-multiple-fields-saveretrieve-then-show
+
+CLASS
+
+> FirebaseHelper
+	> VAR NAME
+		^ Spacecraft => Chore
+		^ spacecrafts => chores
+> CustomAdapter => Cus_Ad
+	> VAR NAME
+		^
+
+XML
+> Model.xml
+	- This would be similar to chore_row
+
+
+=============================
 Tutorials
 
 > ArrayList 
