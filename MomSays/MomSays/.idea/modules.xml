@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MomSays.iml" filepath="$PROJECT_DIR$/MomSays.iml" />
-      <module fileurl="file://C:\Penuel Files\Github\AndroidStudio\Main_4_2_Tutorials\mom-says\MomSays\MomSays\MomSays.iml" filepath="C:\Penuel Files\Github\AndroidStudio\Main_4_2_Tutorials\mom-says\MomSays\MomSays\MomSays.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\Penuel Files\Github\AndroidStudio\Main_4_2_Tutorials\mom-says\MomSays\MomSays\app\app.iml" filepath="C:\Penuel Files\Github\AndroidStudio\Main_4_2_Tutorials\mom-says\MomSays\MomSays\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Main_4_2_Tutorials/mom-says/MomSays/MomSays/MomSays.iml" filepath="$PROJECT_DIR$/../../../../Main_4_2_Tutorials/mom-says/MomSays/MomSays/MomSays.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../../Main_4_2_Tutorials/mom-says/MomSays/MomSays/app/app.iml" filepath="$PROJECT_DIR$/../../../../Main_4_2_Tutorials/mom-says/MomSays/MomSays/app/app.iml" />
     </modules>
   </component>
 </project>
