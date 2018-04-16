@@ -2,16 +2,23 @@ http://camposha.info/source/android-firebase-listview-multiple-fields-saveretrie
 
 CLASS
 
+> Spacecraft => Chore
+	> GETTERS & SETTERS
+		^ assignedTo
+		^ choreName
+		^ choreDetail
+
 > FirebaseHelper
-	> VAR NAME
-		^ Spacecraft => Chore
-		^ spacecrafts => chores
+	^ Spacecraft => Chore
+	^ spacecrafts => chores
+
 > CustomAdapter => Cus_Ad
-	> VAR NAME
-		^
+	^ nameTxt => chore_name_3
+	^ propellantTxt => chore_det_3
+	^ descTxt => ass_to_3
 
 XML
-> Model.xml
+> Model.xml => chore_row
 	- This would be similar to chore_row
 
 

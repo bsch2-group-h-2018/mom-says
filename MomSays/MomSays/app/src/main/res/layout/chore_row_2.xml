@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/chore_name_3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="chore_row_text" />
+
+        <TextView
+            android:id="@+id/chore_det_3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="chore_detail" />
+
+        <TextView
+            android:id="@+id/ass_to_3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="chore_detail" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/send_chore_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@android:drawable/ic_menu_send" />
+</LinearLayout>

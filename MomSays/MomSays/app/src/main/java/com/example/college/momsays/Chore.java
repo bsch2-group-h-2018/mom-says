@@ -34,12 +34,41 @@ public class Chore {
         this.choreDetail = choreDetail;
     }
 
+
+
     public void writeNewTask (String assignedTo, String choreName, String choreDetail){
         Chore chore = new Chore(assignedTo, choreName, choreDetail);
 
         mDatabase.child("Chores").child(choreKey).child("Chore_Name").setValue(choreName) ;
         mDatabase.child("Chores").child(choreKey).child("Chore_Detail").setValue(choreDetail) ;
         mDatabase.child("Chores").child(choreKey).child("Assigned_To").setValue(assignedTo) ;
+    }
+
+    //Getters and Setters
+
+
+    public String getAssignedTo() {
+        return assignedTo;
+    }
+
+    public void setAssignedTo(String assignedTo) {
+        this.assignedTo = assignedTo;
+    }
+
+    public String getChoreName() {
+        return choreName;
+    }
+
+    public void setChoreName(String choreName) {
+        this.choreName = choreName;
+    }
+
+    public String getChoreDetail() {
+        return choreDetail;
+    }
+
+    public void setChoreDetail(String choreDetail) {
+        this.choreDetail = choreDetail;
     }
 }
 
