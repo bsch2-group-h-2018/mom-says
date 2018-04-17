@@ -3,11 +3,12 @@ package com.example.college.momsays;
 import android.widget.BaseAdapter;
 import android.widget.Toast;
 import android.content.Context;
-import java.util.*;
-;import android.view.LayoutInflater;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 
 /**

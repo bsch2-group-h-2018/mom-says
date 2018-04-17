@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.*;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.support.design.widget.FloatingActionButton;
+
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,14 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Main_Act_3 extends AppCompatActivity {
     DatabaseReference db;
     FirebaseHelper helper;
-    CustomAdapter adapter;
+    Cus_Ad adapter;
     ListView lv;
     EditText nameEditTxt, propTxt, descTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.act_main_3);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,7 +43,7 @@ public class Main_Act_3 extends AppCompatActivity {
         helper = new FirebaseHelper(db);
 
         //ADAPTER
-        adapter = new CustomAdapter(this, helper.retrieve());
+        adapter = new Cus_Ad(this, helper.retrieve());
         lv.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
