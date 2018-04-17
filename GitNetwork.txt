@@ -1,9 +1,0 @@
-Master
-	
-	^Database
- 		
-		^db_godoc
-		^db_id	
-	^jod_merge
-	
-	^proto_v1
