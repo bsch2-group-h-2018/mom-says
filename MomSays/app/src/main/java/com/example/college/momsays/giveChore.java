@@ -24,6 +24,8 @@ public class giveChore extends AppCompatActivity {
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Chore chore;
+
+    // Press the Give Chore button to run this class
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
