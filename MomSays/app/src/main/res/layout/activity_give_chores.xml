@@ -20,7 +20,7 @@
     <ListView
         android:id="@+id/choreListView"
         android:layout_width="match_parent"
-        android:layout_height="144dp"
+        android:layout_height="397dp"
         android:layout_alignParentTop="true" />
 
 </RelativeLayout>

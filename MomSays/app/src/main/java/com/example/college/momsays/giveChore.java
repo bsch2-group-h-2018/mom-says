@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -15,6 +17,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class giveChore extends AppCompatActivity {
 
@@ -24,8 +27,6 @@ public class giveChore extends AppCompatActivity {
     ArrayList<String> list;
     ArrayAdapter<String> adapter;
     Chore chore;
-
-    // Press the Give Chore button to run this class
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,16 +47,29 @@ public class giveChore extends AppCompatActivity {
                 {
                     chore = ds.getValue(Chore.class);
                     list.add("Chore Name:" + chore.getChore_Name() +  "\n " + "Assigned To:" + " "+chore.getAssigned_To() + "\n "+ "Details:" + " " +chore.getChore_Detail());
+                    listView.setAdapter(adapter);
+
+                    listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        }
+                    });
                 }
-                listView.setAdapter(adapter);
+
             }
+
+
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
-
         });
+
+
        /* Spinner mySpinner = (Spinner) findViewById(R.id.giveChoreSpinner);
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(giveChore.this,
@@ -83,13 +97,13 @@ public class giveChore extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(Intent.ACTION_SEND);
                 myIntent.setType("text/plain");
-                String shareBody ="ChoreName";
-                String shareSub ="ChoreName";
+                String shareBody ="Chore Name:" + chore.getChore_Name() +  "\n " + "Assigned To:" + " "+chore.getAssigned_To() + "\n "+ "Details:" + " " +chore.getChore_Detail();;
                 myIntent.putExtra(Intent.EXTRA_SUBJECT,shareBody);
                 myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
                 startActivity(Intent.createChooser(myIntent, "Share Using"));
             }
         });
+
 
     }
 }
