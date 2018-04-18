@@ -5,9 +5,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.*;
 
 /**
- * Created by Admin on 04/03/2018.
+ * Created by Penuel and Jodeyne 04/03/2018.
  */
 
+// This class will be used as Chore object
 public class Chore {
     private DatabaseReference mDatabase;
 
@@ -33,6 +34,7 @@ public class Chore {
         this.Chore_Detail = Chore_Detail;
     }
 
+    //Getters created by Jodeyne
     public String getAssigned_To() {
         return Assigned_To;
     }
@@ -65,6 +67,8 @@ public class Chore {
         this.choreDate = choreDate;
     }
 
+    // This method is created by Penuel
+    // Assigns value to the database
     public void writeNewTask (String assignedTo, String choreName, String choreDetail){
         Chore chore = new Chore(assignedTo, choreName, choreDetail);
 

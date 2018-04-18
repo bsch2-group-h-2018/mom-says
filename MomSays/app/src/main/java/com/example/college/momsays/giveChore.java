@@ -19,6 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//Jodeyne - class created by
 public class giveChore extends AppCompatActivity {
 
     ListView listView;
@@ -41,6 +43,8 @@ public class giveChore extends AppCompatActivity {
         list = new ArrayList<>();
         adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, list);
         ref.addValueEventListener(new ValueEventListener() {
+
+            // This methods listens to any updates and changes on the database.
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds: dataSnapshot.getChildren())
