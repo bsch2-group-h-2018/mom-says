@@ -10,3 +10,5 @@
 > Update || Working Build || Working APK - `date`
 
 > Update-2 || Working Build || Working APK - `date`
+
+> Starting state
