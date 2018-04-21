@@ -20,10 +20,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public  class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView Reg_TV = (TextView) findViewById(R.id.Reg_TV);
-    private Button login_btn = (Button) findViewById(R.id.login_btn);
-    private EditText editText = (EditText) findViewById(R.id.editText);
-    private EditText editText4 = (EditText) findViewById(R.id.editText4);
+    private TextView Reg_TV ;
+    private Button login_btn ;
+    private EditText editText ;
+    private EditText editText4 ;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
@@ -32,6 +32,12 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Reg_TV = (TextView) findViewById(R.id.Reg_TV);
+        login_btn = (Button) findViewById(R.id.login_btn);
+        editText = (EditText) findViewById(R.id.editText);
+        editText4 = (EditText) findViewById(R.id.editText4);
+
 
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() != null) {
