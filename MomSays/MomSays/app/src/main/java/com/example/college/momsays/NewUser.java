@@ -53,16 +53,19 @@ public class NewUser extends AppCompatActivity  implements View.OnClickListener 
             // email is empty
             Toast.makeText(this, "Please enter Email", Toast.LENGTH_SHORT).show();
 
-            return;
+           // return;
         }
-        if (TextUtils.isEmpty(password)) {
+        else if (TextUtils.isEmpty(password)){
             //password id empty
-
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
 
-            return;
-
+           // return;
         }
+        else{
+            startActivity(new Intent(this, homePage.class));
+        }
+
+
         progressDialog.setMessage("Registering User .... ");
         progressDialog.show();
 
@@ -85,12 +88,14 @@ public class NewUser extends AppCompatActivity  implements View.OnClickListener 
     @Override
     public void onClick(View v) {
         if (v == buttonRegister) {
-            registerUser();
-
+            startActivity(new Intent(this, homePage.class));
         }
+
+        /*
         if (v == textViewSignup) ;
         finish();
         startActivity(new Intent(this, MainActivity.class));
+        */
     }
 }
 

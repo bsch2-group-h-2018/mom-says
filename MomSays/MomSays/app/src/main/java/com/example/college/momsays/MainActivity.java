@@ -39,13 +39,6 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
         editText4 = (EditText) findViewById(R.id.editText4);
 
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        if (firebaseAuth.getCurrentUser() != null) {
-
-            finish();
-            startActivity(new Intent(getApplicationContext(), homePage.class));
-        }
-
         login_btn.setOnClickListener(this);
         Reg_TV.setOnClickListener(this);
         progressDialog = new ProgressDialog(this);
@@ -53,52 +46,12 @@ public  class MainActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    public void userLogin() {
-        String email = editText.getText().toString().trim();
-        String password = editText4.getText().toString().trim();
 
-        if (TextUtils.isEmpty(email)) {
-            // email is empty
-            Toast.makeText(this, "Please enter Email", Toast.LENGTH_SHORT).show();
-
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            //password id empty
-
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
-
-            return;
-
-        }
-        progressDialog.setMessage("Registering User .... ");
-        progressDialog.show();
-
-        firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()) {
-                            finish();
-                            startActivity(new Intent(getApplicationContext(), homePage.class));
-                            startActivity(new Intent(getApplicationContext(), homePage.class));
-                            startActivity(new Intent(getApplicationContext(), homePage.class));
-                        }
-                    }
-
-                });
-
-    }
 
     @Override
     public void onClick(View view) {
-        if (view == login_btn) {
-            userLogin();
-        }
 
         if (view == login_btn){
-            finish();
             startActivity(new Intent(this, homePage.class));
         }
 

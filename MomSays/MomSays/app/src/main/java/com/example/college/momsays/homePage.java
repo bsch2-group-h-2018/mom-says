@@ -20,13 +20,13 @@ public class homePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_give_chores);
         setContentView(R.layout.activity_home_page);
-        /*setContentView(R.layout.activity_make_chores);*/
+        firebaseAuth = FirebaseAuth.getInstance();
 
-             firebaseAuth = FirebaseAuth.getInstance();
-             if(firebaseAuth.getCurrentUser()==null) {
-                 finish();
-                 startActivity(new Intent(this, NewUser.class));
-             }
+         if(firebaseAuth.getCurrentUser()==null) {
+             finish();
+             startActivity(new Intent(this, NewUser.class));
+         }
+
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
         Button btnToGC = (Button) findViewById(R.id.giveChoresbtn);
