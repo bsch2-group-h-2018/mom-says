@@ -4,3 +4,5 @@
 > Starting state of Merging with mine
 
 > Working Build || Working APK 
+
+> Starting state of Merging with Mine - `date`
