@@ -1,0 +1,5 @@
+> Run the app
+> Click button 'Test 1'
+> Press any chore and a message should display.
+	^ The message is the name of the chore.
+			
