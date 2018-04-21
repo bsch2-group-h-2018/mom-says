@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -61,6 +62,18 @@ public class giveChore extends AppCompatActivity {
 
                         }
                     });
+
+                    listView.setOnItemClickListener(
+                            //Listener is waiting for user to click something, when they do, it gives you an information on what they click
+                            new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String chore = String.valueOf(parent.getItemAtPosition(position));
+                                    Toast.makeText(giveChore.this, chore, Toast.LENGTH_LONG).show();
+                                }
+                            }
+
+                    );
                 }
 
             }
