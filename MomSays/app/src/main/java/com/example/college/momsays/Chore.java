@@ -28,6 +28,7 @@ public class Chore {
         choreDate = new Date();
     }
 
+    //Constructor for the Chore object
     public Chore(String Assigned_To, String Chore_Name, String Chore_Detail){
         this.Assigned_To = Assigned_To;
         this.Chore_Name = Chore_Name;

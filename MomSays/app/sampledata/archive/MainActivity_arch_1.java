@@ -30,7 +30,7 @@ public  class MainActivity_arch_1 extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        Reg_TV = (TextView) findViewById(R.id.Reg_TV);
         login_btn = (Button) findViewById(R.id.login_btn);
         editText = (EditText) findViewById(R.id.editText);
         editText4 = (EditText) findViewById(R.id.editText4);

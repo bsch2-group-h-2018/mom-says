@@ -73,11 +73,12 @@ public class giveChore extends AppCompatActivity {
                                 //This display a message box at the button when you click on the item
                                 Toast.makeText(giveChore.this, chore, Toast.LENGTH_LONG).show();
 
+                                //Penuel
                                 //Shares an Item to another application
                                 Chore send_chore = new Chore();
                                 Intent myIntent = new Intent(Intent.ACTION_SEND);
                                 myIntent.setType("text/plain");
-                                String shareBody ="Chore Name:" + send_chore.getChore_Name() +  "\n " + "Assigned To:" + " "+send_chore.getAssigned_To() + "\n "+ "Details:" + " " +send_chore.getChore_Detail();;
+                                String shareBody ="Chore Name: " + send_chore.getChore_Name() +  "\n " + "Assigned To: " + " "+send_chore.getAssigned_To() + "\n "+ "Details:" + " " +send_chore.getChore_Detail();
                                 myIntent.putExtra(Intent.EXTRA_SUBJECT,shareBody);
                                 myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
                                 startActivity(Intent.createChooser(myIntent, "Share Using"));

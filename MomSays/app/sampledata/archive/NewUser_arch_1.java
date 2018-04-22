@@ -1,10 +1,10 @@
-package com.example.college.momsays.archive;
+package com.example.college.momsays;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -12,14 +12,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.college.momsays.MainActivity;
-import com.example.college.momsays.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class NewUser_arch_1 extends AppCompatActivity implements View.OnClickListener {
+public class NewUser extends AppCompatActivity  implements View.OnClickListener {
 
     private Button buttonRegister;
     private EditText editTextEmail;
@@ -33,7 +32,7 @@ public class NewUser_arch_1 extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_user_arch_1);
+        setContentView(R.layout.activity_new_user);
 
         progressDialog = new ProgressDialog(this);
 
@@ -56,14 +55,17 @@ public class NewUser_arch_1 extends AppCompatActivity implements View.OnClickLis
 
             return;
         }
-        if (TextUtils.isEmpty(password)) {
+        else if (TextUtils.isEmpty(password)){
             //password id empty
-
             Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show();
 
             return;
+        }
+        else{
 
         }
+
+
         progressDialog.setMessage("Registering User .... ");
         progressDialog.show();
 
@@ -87,8 +89,8 @@ public class NewUser_arch_1 extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if (v == buttonRegister) {
             registerUser();
-
         }
+
         if (v == textViewSignup) ;
         finish();
         startActivity(new Intent(this, MainActivity.class));
