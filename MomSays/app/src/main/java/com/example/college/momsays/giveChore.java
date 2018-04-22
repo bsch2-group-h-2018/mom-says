@@ -65,27 +65,13 @@ public class giveChore extends AppCompatActivity {
 
                     listView.setOnItemClickListener(
                             //Listener is waiting for user to click something, when they do, it gives you an information on what they click
-                        new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                String chore = String.valueOf(parent.getItemAtPosition(position));
-
-                                //This display a message box at the button when you click on the item
-                                Toast.makeText(giveChore.this, chore, Toast.LENGTH_LONG).show();
-
-                                //Penuel
-                                //Shares an Item to another application
-                                Chore send_chore = new Chore();
-                                Intent myIntent = new Intent(Intent.ACTION_SEND);
-                                myIntent.setType("text/plain");
-                                String shareBody ="Chore Name: " + send_chore.getChore_Name() +  "\n " + "Assigned To: " + " "+send_chore.getAssigned_To() + "\n "+ "Details:" + " " +send_chore.getChore_Detail();
-                                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareBody);
-                                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
-                                startActivity(Intent.createChooser(myIntent, "Share Using"));
+                            new AdapterView.OnItemClickListener() {
+                                @Override
+                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                    String chore = String.valueOf(parent.getItemAtPosition(position));
+                                    Toast.makeText(giveChore.this, chore, Toast.LENGTH_LONG).show();
+                                }
                             }
-
-
-                        }
 
                     );
                 }
@@ -101,23 +87,20 @@ public class giveChore extends AppCompatActivity {
         });
 
 
-       /* Spinner mySpinner = (Spinner) findViewById(R.id.giveChoreSpinner);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(giveChore.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.chores));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);
+        Button sendButton = (Button) findViewById(R.id.sharenBtn);
 
-
-
-        Spinner kidSpinner = (Spinner) findViewById(R.id.selectKidSpinner);
-
-        ArrayAdapter<String> kidAdapter = new ArrayAdapter<>(giveChore.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.kids));
-        kidAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        kidSpinner.setAdapter(kidAdapter);
-
-        */
+        sendButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(Intent.ACTION_SEND);
+                myIntent.setType("text/plain");
+                String shareBody ="Chore Name:" + chore.getChore_Name() +  "\n " + "Assigned To:" + " "+chore.getAssigned_To() + "\n "+ "Details:" + " " +chore.getChore_Detail();;
+                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareBody);
+                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(myIntent, "Share Using"));
+            }
+        });
 
 
     }

@@ -1,0 +1,4 @@
+
+v6.2
+- The data is organizely stored
+- Now able to input the following choreId, AssignedTo, ChoreName and ChoreDetails
