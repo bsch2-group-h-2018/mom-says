@@ -1,3 +1,9 @@
+
+/**
+ * Group H
+ * https://github.com/bsch2-group-h-2018/mom-says
+ */
+
 package com.example.college.momsays;
 
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -20,6 +27,10 @@ public class makeChores extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_chores);
+
+        CharSequence text = "Hello toast!";
+        int duration = Toast.LENGTH_SHORT;
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

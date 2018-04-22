@@ -1,3 +1,8 @@
+/**
+ * Group H
+ * https://github.com/bsch2-group-h-2018/mom-says
+ */
+
 package com.example.college.momsays;
 
 import android.content.Intent;
@@ -51,7 +56,7 @@ public class giveChore extends AppCompatActivity {
                 for(DataSnapshot ds: dataSnapshot.getChildren())
                 {
                     chore = ds.getValue(Chore.class);
-                    list.add("Chore Name:" + chore.getChore_Name() +  "\n " + "Assigned To:" + " "+chore.getAssigned_To() + "\n "+ "Details:" + " " +chore.getChore_Detail());
+                    list.add("Chore Name: " + chore.getChore_Name() +  "\n " + "Assigned To:" + " "+chore.getAssigned_To() + "\n "+ "Details:" + " " +chore.getChore_Detail());
                     listView.setAdapter(adapter);
 
                     listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
