@@ -1,5 +1,0 @@
-git init
-git add .
-git add .
-git commit -am "`date`"
-git push -u origin master
