@@ -1,4 +1,6 @@
 Mom Says - Group H
+- Visit the following link to know more about this app:
+	https://penmaypa.wordpress.com/mom-says 
 - Github repo:
 	https://github.com/bsch2-group-h-2018/mom-says
  
