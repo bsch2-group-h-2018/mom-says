@@ -7,3 +7,4 @@ Mom Says - Group H
 - APK is available on the APK Folder
 
 - The full package and the source-code is in the MomSays folder.
+	https://github.com/bsch2-group-h-2018/mom-says/tree/master/MomSays/app/src/main/java/com/example/college/momsays
